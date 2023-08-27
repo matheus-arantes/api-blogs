@@ -15,12 +15,12 @@ const login = async (email, password) => {
           };
     
         const token = jwt.sign({ data: { userId: user.id } }, process.env.JWT_SECRET, jwtConfig);
-        return { status: 200, data: { token } }
+        return { status: 200, data: { token } };
     } catch (err) {
-        return res.status(500).json({ message: 'Erro interno', error: err.message });
+        console.log(err);
     }
 };
 
 module.exports = {
     login,
-}
+};

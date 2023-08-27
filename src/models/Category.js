@@ -15,5 +15,5 @@ module.exports = (sequelize, DataTypes) => {
       underscored: true,
     });
   
-    return categoryModel
+    return categoryModel;
 };

@@ -10,7 +10,7 @@ const createUserSchema = joi.object({
     password: joi.string().min(6).required().messages({
         'string.min': '"password" length must be at least 6 characters long',
     }),
-    image: joi.string()
+    image: joi.string(),
 });
 
 module.exports = {

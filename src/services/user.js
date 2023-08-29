@@ -11,12 +11,12 @@ const createUser = async (user) => {
     const checkUser = await User.findOne({ where: { email } });
     
     if (checkUser) {
-        return { status: 409 , data: { message: 'User already registered' }}
+        return { status: 409, data: { message: 'User already registered' } };
     }
     
     const createdUser = await User.create(user);
     const token = jwt.sign({ data: { userId: createdUser.id } }, process.env.JWT_SECRET, jwtConfig);
-    return { status: 201, data: { token }}
+    return { status: 201, data: { token } };
 };
 
 const findAll = async () => {

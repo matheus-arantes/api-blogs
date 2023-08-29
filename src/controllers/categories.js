@@ -9,6 +9,15 @@ const createCategory = async (req, res) => {
   }
 };
 
+const findAll = async (_req, res) => {
+  try {
+    const { status, data } = await categoriesService.findAll();
+    return res.status(status).json(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
 module.exports = {
     createCategory,
+    findAll,
 };

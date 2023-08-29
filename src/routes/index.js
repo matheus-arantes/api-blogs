@@ -9,6 +9,6 @@ router.use('/login', loginRoute);
 
 router.use('/user', userRoute);
 
-router.use('/categories', categoriesRouter)
+router.use('/categories', categoriesRouter);
 
 module.exports = router;

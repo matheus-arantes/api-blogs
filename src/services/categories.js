@@ -11,4 +11,4 @@ const createCategory = async (category) => {
 
 module.exports = {
     createCategory,
-}
+};

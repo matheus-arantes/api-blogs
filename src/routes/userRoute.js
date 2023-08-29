@@ -9,4 +9,6 @@ userRouter.post('/', checkUser, userController.createUser);
 
 userRouter.get('/', verifyToken, userController.findAll);
 
+userRouter.get('/:id', verifyToken, userController.findById);
+
 module.exports = userRouter;

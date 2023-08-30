@@ -9,7 +9,8 @@ const verifyToken = (req, res, next) => {
     }
 
     try {
-      jwt.verify(token, process.env.JWT_SECRET);
+      const id = jwt.verify(token, process.env.JWT_SECRET);
+      req.user = id;
       next();
     } catch (error) {
       res.status(401).json({ message: 'Expired or invalid token' });
